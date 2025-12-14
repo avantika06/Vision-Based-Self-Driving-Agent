@@ -32,64 +32,41 @@ The system is built with **modular architecture**, separating the *Perception La
 ├── app.py              # The "Body": Streamlit UI and YOLOv8 inference pipeline
 ├── requirements.txt    # Project dependencies
 └── README.md           # Documentation
-\
 
+# ⚙️ Installation
 
-
-
-
-
-## ⚙️ Installation
-
-1.  **Clone the repository:**
-
-    ```bash
+1.  Clone the repository:
     git clone [https://github.com/yourusername/self-driving-agent.git](https://github.com/yourusername/self-driving-agent.git)
     cd self-driving-agent
-    ```
-
-2.  **Install dependencies:**
-
-    ```bash
+    
+2.  Install dependencies:
     pip install -r requirements.txt
-    ```
 
-3.  **Run the application:**
-
-    ```bash
+3.  Run the application:
     streamlit run app.py
-    ```
 
-4.  **Usage:**
-
-      * Once the app opens in your browser, upload any **MP4 dashcam video**.
+4.  Usage:
+      * Once the app opens in your browser, upload any MP4 dashcam video.
       * (Recommended) Use a city driving video to test traffic light and pedestrian logic.
 
-## 🧠 How It Works
+🧠 How It Works
 
 The system operates on a **Perception-Action Loop**:
 
-1.  **Input:** A frame from the dashcam video.
-2.  **Perception (YOLOv8):** The model scans the frame and returns bounding boxes for relevant classes (Car, Person, Truck, Traffic Light).
-3.  **State Estimation:**
+1.  Input: A frame from the dashcam video.
+2.  Perception (YOLOv8): The model scans the frame and returns bounding boxes for relevant classes (Car, Person, Truck, Traffic Light).
+3.  State Estimation:
       * The `agent.py` module calculates the center point of every object.
-      * It determines if an object is inside the **"Danger Zone"** (the lane directly ahead).
-4.  **Policy Execution:**
-      * *If* Traffic Light detected $\rightarrow$ **BRAKE**
-      * *If* Obstacle in Danger Zone AND Close $\rightarrow$ **BRAKE**
-      * *If* Obstacle in Danger Zone AND Far $\rightarrow$ **STEER**
-      * *Else* $\rightarrow$ **ACCELERATE**
-5.  **Output:** The decision is overlaid on the video and displayed on the dashboard.
+      * It determines if an object is inside the "Danger Zone" (the lane directly ahead).
+4.  Policy Execution:
+      * If Traffic Light detected $\rightarrow$ BRAKE
+      * If Obstacle in Danger Zone AND Close -> BRAKE
+      * If Obstacle in Danger Zone AND Far -> STEER
+      * Else -> ACCELERATE
+5.  Output: The decision is overlaid on the video and displayed on the dashboard.
 
-## 🔮 Currently working on
+🔮 Currently working on
 
-  * **Traffic Light Color Detection:** Use OpenCV HSV color masking to distinguish between Red (Stop) and Green (Go) lights.
-  * **Reinforcement Learning:** Replace the heuristic `if/else` logic in `agent.py` with a trained **DQN or PPO model** that learns to drive via simulation.
-  * **Lane Line Detection:** Integrate Canny Edge Detection to keep the car centered in the lane.
-
-## 🤝 Contributing
-
-Contributions are welcome\! Please feel free to submit a Pull Request.
-
-```
-```
+  * Traffic Light Color Detection: Use OpenCV HSV color masking to distinguish between Red (Stop) and Green (Go) lights.
+  * Reinforcement Learning: Replace the heuristic `if/else` logic in `agent.py` with a trained DQN or PPO model that learns to drive via simulation.
+  * Lane Line Detection: Integrate Canny Edge Detection to keep the car centered in the lane.

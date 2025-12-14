@@ -6,6 +6,8 @@
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![YOLOv8](https://img.shields.io/badge/Model-YOLOv8-green)
 
+![Self Driving Agent Demo](demo.gif)
+
 ## 📌 Overview
 This project simulates the core architecture of an autonomous vehicle. Unlike standard object detection demos that simply *label* objects, this system acts as an **Agent**: it perceives the environment, interprets spatial relationships, and executes driving commands (`ACCELERATE`, `BRAKE`, `STEER`) in real-time.
 

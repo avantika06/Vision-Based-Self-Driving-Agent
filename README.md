@@ -51,7 +51,7 @@ The system is built with **modular architecture**, separating the *Perception La
       * Once the app opens in your browser, upload any MP4 dashcam video.
       * (Recommended) Use a city driving video to test traffic light and pedestrian logic.
 
-🧠 How It Works
+How It Works
 
 The system operates on a **Perception-Action Loop**:
 
@@ -67,7 +67,7 @@ The system operates on a **Perception-Action Loop**:
       * Else -> ACCELERATE
 5.  Output: The decision is overlaid on the video and displayed on the dashboard.
 
-🔮 Currently working on
+Currently working on
 
   * Traffic Light Color Detection: Use OpenCV HSV color masking to distinguish between Red (Stop) and Green (Go) lights.
   * Reinforcement Learning: Replace the heuristic `if/else` logic in `agent.py` with a trained DQN or PPO model that learns to drive via simulation.

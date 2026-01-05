@@ -1,4 +1,4 @@
-# 🚗 Vision-Based Self-Driving Agent
+# Vision-Based Self-Driving Agent
 
 **An autonomous driving system that combines Computer Vision (YOLOv8) with Rule-Based Decision Making to navigate complex traffic environments.**
 
@@ -8,12 +8,12 @@
 
 ![Self Driving Agent Demo](demo.gif)
 
-## 📌 Overview
+## Overview
 This project simulates the core architecture of an autonomous vehicle. Unlike standard object detection demos that simply *label* objects, this system acts as an **Agent**: it perceives the environment, interprets spatial relationships, and executes driving commands (`ACCELERATE`, `BRAKE`, `STEER`) in real-time.
 
 The system is built with **modular architecture**, separating the *Perception Layer* (Computer Vision) from the *Reasoning Layer* (Decision Logic), making it adaptable for future Reinforcement Learning (RL) integration.
 
-## 🚀 Features
+## Features
 * **Real-Time Perception:** Uses **YOLOv8** to detect cars, pedestrians, traffic lights, and obstacles with high accuracy.
 * **Spatial Awareness:** Implements a dynamic **"Danger Zone"** logic to differentiate between immediate threats and background noise.
 * **Decision Making Agent:** A custom heuristic agent that reacts to:
@@ -22,20 +22,20 @@ The system is built with **modular architecture**, separating the *Perception La
     * **Lane Obstruction:** Decides to steer left/right based on obstacle position.
 * **Interactive Dashboard:** A **Streamlit** UI that visualizes the "Brain" of the car, showing live telemetry, decision confidence, and the video feed.
 
-## 🛠️ Tech Stack
+## Tech Stack
 * **Language:** Python
 * **Vision Model:** [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) (Pre-trained on COCO)
 * **Interface:** Streamlit
 * **Image Processing:** OpenCV, NumPy
 
-## 📂 Project Structure
+## Project Structure
 ```bash
 ├── agent.py            # The "Brain": Logic for spatial reasoning and decision making
 ├── app.py              # The "Body": Streamlit UI and YOLOv8 inference pipeline
 ├── requirements.txt    # Project dependencies
 └── README.md           # Documentation
 
-# ⚙️ Installation
+# Installation
 
 1.  Clone the repository:
     git clone [https://github.com/yourusername/self-driving-agent.git](https://github.com/yourusername/self-driving-agent.git)
